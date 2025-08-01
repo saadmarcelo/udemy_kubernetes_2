@@ -1,0 +1,29 @@
+############ Modulo 01 ################
+
+Control Plane ( componentes criticos do claster)
+  API server
+    Principal serviço
+    Onde var ser exposto o seviço do control plane
+    vai ser um pod rodando na porta 6443 que fica escutando as requisições de API
+  cloud controller
+  controller manager
+  etcd
+  scheduler
+  
+Data Plane
+  kubelet
+  kube-proxy
+
+arquivos de configuração do cluster kubernetes
+No masteplane acessar o diretorio /etc/kubernetes/admin.conf
+acessar na maquina q vai administrar o cluster kubernetes e copiar o conteudo do arquivo anterior do servidor para o arquivo  ~/.kube/config
+
+kubectl get pods -A ( lista todos os pods de todos os namespaces )
+
+outra forma de fazer a conexão com o cluster 
+  exportar uma variavel chamada KUBECONFIG
+  export KUBECONFIG=$HOME/.kube/config 
+
+Posso tambem so passar a variavel de configuracao somente em tempo de execução nao salvando a configuracao 
+KUBECONFIG=$HOME/.kube/config kubectl get pods -A     (vai usar o arquivo de config somente para mostrar todos os pods e nao salva nada)
+
