@@ -17,6 +17,11 @@ spec:
       containers:
         - image: nginx
           name: nginx
+          env:
+            - name: ENVIRONMENT
+              value: development
+            - name: ALUNO
+              value: Saad
           readinessProbe:
             httpGet:
               path: "/"
